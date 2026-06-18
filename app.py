@@ -483,25 +483,47 @@ elif page == nav[5]:
                 cols = st.columns(len(entry["inputs"]))
                 for col, (k, v) in zip(cols, entry["inputs"].items()):
                     col.metric(k, v)
+
 elif page == nav[6]:
-    st.title("About Us")
-    st.markdown("**Kelompok 9 — Kelas 1D Analisis Kimia**")
-    st.divider()
+    if st.session_state.lang == "Indonesia":
+        st.title("Tentang GraviO")
+        st.markdown("**Kelompok 9 — Kelas 1D Analisis Kimia**")
+        st.divider()
 
-    st.subheader("Tentang GraviO")
-    st.write("""
-    GraviO adalah aplikasi berbasis web yang diciptakan sebagai solusi inovatif untuk
-    mempermudah serta mengefisiensikan proses perhitungan kuantitatif dalam metode analisis gravimetri.
-    Perangkat lunak ini dirancang untuk mengatasi hambatan dalam perhitungan kimia yang rumit,
-    di mana ketelitian tinggi sangat diperlukan agar tidak terjadi bias pada hasil akhir penelitian atau eksperimen.
-    """)
-    st.write("""
-    Aplikasi ini menjadi jawaban atas tantangan bagi praktisi laboratorium maupun pelajar kimia
-    yang sering terkendala oleh tahapan konversi stoikiometri yang berlapis dan menyita waktu.
-    """)
+        st.write("""
+        GraviO adalah aplikasi berbasis web yang diciptakan sebagai solusi inovatif untuk
+        mempermudah serta mengefisiensikan proses perhitungan kuantitatif dalam metode analisis gravimetri.
+        Perangkat lunak ini dirancang untuk mengatasi hambatan dalam perhitungan kimia yang rumit,
+        di mana ketelitian tinggi sangat diperlukan agar tidak terjadi bias pada hasil akhir penelitian atau eksperimen.
+        """)
+        st.write("""
+        Aplikasi ini menjadi jawaban atas tantangan bagi praktisi laboratorium maupun pelajar kimia
+        yang sering terkendala oleh tahapan konversi stoikiometri yang berlapis dan menyita waktu.
+        """)
 
-    st.divider()
-    st.subheader("Tim Pengembang")
+        st.divider()
+        st.subheader("Tim Pengembang")
+
+    else:
+        st.title("About GraviO")
+        st.markdown("**Group 9 — Class 1D Chemical Analysis**")
+        st.divider()
+
+        st.write("""
+        GraviO is a web-based application created as an innovative solution to simplify and
+        streamline quantitative calculations in gravimetric analysis. This software is designed
+        to overcome the challenges of complex chemical calculations, where high precision is
+        essential to prevent bias in the final results of research or experiments.
+        """)
+        st.write("""
+        This application provides a solution to the challenges faced by laboratory practitioners
+        and chemistry students who are often hindered by multi-layered and time-consuming
+        stoichiometric conversion steps.
+        """)
+
+        st.divider()
+        st.subheader("Development Team")
+        st.caption("The following is a list of members responsible for developing this application:")
 
     members = [
         {"name": "Ayesha Humaira Faturachman", "nim": "2560591"},
