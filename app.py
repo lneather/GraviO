@@ -487,7 +487,7 @@ elif page == nav[5]:
 elif page == nav[6]:
     if st.session_state.lang == "Indonesia":
         st.title("Tentang GraviO")
-        st.markdown("**Kelompok 9 — Kelas 1D Analisis Kimia**")
+        st.markdown("**NineComp — Kelompok 9 Kelas 1D Analisis Kimia**")
         st.divider()
 
         st.markdown("""
@@ -508,7 +508,7 @@ elif page == nav[6]:
 
     else:
         st.title("About GraviO")
-        st.markdown("**Group 9 — Class 1D Chemical Analysis**")
+        st.markdown("**NineComp — Group 9 of Class 1D Chemical Analysis**")
         st.divider()
 
         st.markdown("""
