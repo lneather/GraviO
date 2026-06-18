@@ -13,7 +13,7 @@ TEXT = {
     "English": {
         "app_caption": "v1.0.0 · by NineComp",
         "app_note": "All calculations are performed locally. No data is transmitted.",
-        "nav": ["Overview", "Gravimetric Factor", "Assay / Purity", "Loss on Drying", "Residue on Ignition", "History"],
+        "nav": ["Overview", "Gravimetric Factor", "Assay / Purity", "Loss on Drying", "Residue on Ignition", "History", "About Us"],
         "overview_title": "Gravimetric Analysis Calculator",
         "overview_sub": "Select a calculation method from the sidebar to begin.",
         "card_assay_title": "Assay / Purity",
@@ -108,7 +108,7 @@ TEXT = {
     "Indonesia": {
         "app_caption": "v1.0.0 · by NineComp",
         "app_note": "Semua perhitungan dilakukan secara lokal. Tidak ada data yang dikirim.",
-        "nav": ["Beranda", "Faktor Gravimetri", "Kadar / Kemurnian", "Kadar Air", "Kadar Abu", "Riwayat"],
+        "nav": ["Beranda", "Faktor Gravimetri", "Kadar / Kemurnian", "Kadar Air", "Kadar Abu", "Riwayat", "Tentang Kami"],
         "overview_title": "Kalkulator Analisis Gravimetri",
         "overview_sub": "Pilih metode perhitungan dari menu di samping untuk memulai.",
         "card_assay_title": "Kadar / Kemurnian",
@@ -483,3 +483,27 @@ elif page == nav[5]:
                 cols = st.columns(len(entry["inputs"]))
                 for col, (k, v) in zip(cols, entry["inputs"].items()):
                     col.metric(k, v)
+elif page == nav[6]:
+    if st.session_state.lang == "Indonesia":
+        st.title("Tentang Kami")
+        st.markdown("**Kelompok 9 — Kelas 1D Analisis Kimia**")
+    else:
+        st.title("About Us")
+        st.markdown("**Group 9 — Class 1D Chemical Analysis**")
+
+    st.divider()
+
+    members = [
+        {"name": "Ayesha Humaira Faturachman", "nim": "2560591"},
+        {"name": "Kinanti Salwaa Dwitama",     "nim": "2560660"},
+        {"name": "Nezha Nur Rashida",           "nim": "2560724"},
+        {"name": "Rihan Fathurrahman",          "nim": "2560755"},
+        {"name": "Rosalina Engelina Situmorang","nim": "2560763"},
+    ]
+
+    col1, col2 = st.columns(2)
+    for i, m in enumerate(members):
+        with (col1 if i % 2 == 0 else col2):
+            with st.container(border=True):
+                st.markdown(f"👤 **{m['name']}**")
+                st.caption(f"NIM: {m['nim']}")
